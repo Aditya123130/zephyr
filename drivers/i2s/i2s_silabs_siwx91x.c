@@ -813,7 +813,6 @@ static int i2s_siwx91x_trigger(const struct device *dev, enum i2s_dir dir, enum 
 		i2s_siwx91x_stream_disable(stream, stream->dma_dev);
 		stream->queue_drop(stream);
 		stream->state = I2S_STATE_READY;
-		pm_device_runtime_put_async(dev, K_NO_WAIT);
 		break;
 
 	case I2S_TRIGGER_PREPARE:
